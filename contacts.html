@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — Мастерстрой АА</title>
+  <meta name="description" content="Контакты ООО Мастерстрой АА. Связаться, адрес склада, реквизиты и документы.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ff9800;
+      --brown: #88471a;
+      --bg-main: #fff;
+      --bg-block: #fff8f1;
+      --shadow: 0 8px 32px #88471a11;
+      --radius: 16px;
+    }
+    html, body { background:var(--bg-main); box-sizing:border-box; margin:0;padding:0; }
+    body { font-family:'Inter', Arial, sans-serif; color:var(--brown);}
+    header {background: var(--bg-block); border-bottom: 1.5px solid var(--accent); padding: 26px 0 20px; text-align: center; box-shadow: var(--shadow);}
+    header h1 {color: var(--brown); font-weight:900; font-size:2.2em; margin:0 0 5px 0;}
+    header p {color: var(--accent); font-weight:600; font-size:1.11em; margin:0;}
+    nav {display: flex; justify-content:center; gap:26px; margin:30px 0 18px 0; font-size:1.07em;}
+    nav a {color: var(--brown); font-weight:bold; text-decoration:none; padding:7px 0; border-bottom:2.5px solid transparent; transition:.16s;}
+    nav a.active, nav a:hover {color: var(--accent);border-bottom:2.5px solid var(--accent);}
+    .container { max-width: 550px; margin: 0 auto; padding: 0 14px; }
+    h2 {color:var(--accent);margin:28px 0 16px 0;}
+    .contacts-block {background: var(--bg-block);padding:20px 16px 16px 16px; border-radius:11px;margin-bottom:18px;max-width:520px;margin-left:auto;margin-right:auto;box-shadow:0 2px 10px #ff98000d;border:1.5px solid #ffb430;text-align:center;}
+    .contacts-address {font-size:1em;color:var(--brown);font-weight:bold;background:#fff6e0;display:block;padding:8px 9px;border-radius:7px;margin-bottom:11px;border:1px solid #ffb430;}
+    .contacts-phone {font-size:1.13em;display:flex;justify-content:center;gap:23px;margin:11px 0 3px;}
+    .contacts-phone a {color:var(--accent);text-decoration:underline;font-weight:bold;letter-spacing:.3px;transition:.17s;}
+    .contacts-phone a:hover {color:var(--brown);}
+    .contacts-email {margin-top:2px;}
+    .contacts-email a { color:var(--brown);}
+    #docs {background:var(--bg-block);border-radius:var(--radius);border:1.5px solid #ffeac3;padding:18px 20px;margin-bottom:24px;}
+    #docs a {color:var(--accent);text-decoration:underline;font-weight:bold;}
+    #docs a:hover {color:var(--brown);}
+    .phone-float {position:fixed;bottom:32px;right:26px;width:58px;height:58px;background:var(--accent);border-radius:50%;box-shadow:0 4px 30px #ff980035;display:flex;align-items:center;justify-content:center;z-index:10999;border:none;cursor:pointer;transition:.19s;}
+    .phone-float:hover,.phone-float:active {background:#e28102;box-shadow:0 6px 42px #e28102a0;transform:scale(1.17) rotate(-4deg);}
+    .phone-float svg {width:2em;height:2em;fill:var(--bg-main);}
+    @media (max-width:650px) {.container{padding:0 2vw;}.contacts-block{max-width:98%;}.phone-float{width:45px;height:45px;right:8px;bottom:10px;}.phone-float svg{width:1.3em;height:1.3em;}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>МАСТЕРСТРОЙ АА</h1>
+    <p>Производство тротуарной плитки и бордюров</p>
+  </header>
+  <nav>
+    <a href="about.html">О компании</a>
+    <a href="products.html">Продукция</a>
+    <a href="contacts.html" class="active">Контакты</a>
+  </nav>
+  <div class="container">
+    <h2 id="contacts">Контакты</h2>
+    <div class="contacts-block">
+      <div class="contacts-address">
+        Московская область, Одинцовский р-н, д. Ликино, улица Промышленная дом 1
+      </div>
+      <div class="contacts-phone">
+        <a href="tel:+79260480808">+7 (926) 048-08-08</a>
+        <a href="tel:+79859980021">+7 (985) 998-00-21</a>
+      </div>
+      <div class="contacts-email">
+        <b>Email:</b>
+        <a href="mailto:ms.st.aa@mail.ru">ms.st.aa@mail.ru</a>
+      </div>
+    </div>
+    <section id="docs">
+      <h3 style="margin-top:0;">Документы и реквизиты</h3>
+      <p>Скачайте:
+        <a href="/price.pdf" download>Прайс-лист (PDF)</a> |
+        <a href="/sertifikat.pdf" download>Сертификат качества</a>
+      </p>
+      <p><b>Реквизиты:</b> ООО "МАСТЕРСТРОЙ АА", ИНН 5012050807, ОГРН 1145074002347</p>
+    </section>
+  </div>
+  <a href="tel:+79260480808" class="phone-float" aria-label="+7 (926) 048-08-08">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11" fill="#ff9800"/>
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.69.59A1 1 0 0121 17v3a1 1 0 01-1 1C11.16 21 3 12.84 3 3a1 1 0 011-1h3a1 1 0 011 0.27 11.72 11.72 0 00.59 3.69 1 1 0 01-.24 1.01l-2.2 2.21z"/>
+    </svg>
+  </a>
+</body>
+</html>

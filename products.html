@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Продукция — Мастерстрой АА</title>
+  <meta name="description" content="Каталог продукции Мастерстрой АА — бордюры, брусчатка, тротуарная плитка.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ff9800;
+      --brown: #88471a;
+      --bg-main: #fff;
+      --bg-block: #fff8f1;
+      --shadow: 0 8px 32px #88471a11;
+      --radius: 16px;
+    }
+    html, body { background:var(--bg-main); box-sizing:border-box; margin:0;padding:0; }
+    body { font-family:'Inter', Arial, sans-serif; color:var(--brown);}
+    header {background: var(--bg-block); border-bottom: 1.5px solid var(--accent); padding: 26px 0 20px; text-align: center; box-shadow: var(--shadow);}
+    header h1 {color: var(--brown); font-weight:900; font-size:2.2em; margin:0 0 5px 0;}
+    header p {color: var(--accent); font-weight:600; font-size:1.11em; margin:0;}
+    nav {display: flex; justify-content:center; gap:26px; margin:30px 0 18px 0; font-size:1.07em;}
+    nav a {color: var(--brown); font-weight:bold; text-decoration:none; padding:7px 0; border-bottom:2.5px solid transparent; transition:.16s;}
+    nav a.active, nav a:hover {color: var(--accent);border-bottom:2.5px solid var(--accent);}
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 13px; }
+    h2 {color:var(--accent);margin-top:28px;}
+    #product-filters form { margin-bottom:15px; display:flex;gap:16px;flex-wrap:wrap;align-items:end;}
+    #product-filters select {padding:8px 12px;border-radius:7px; border:1.3px solid #ffb430;}
+    #product-filters button {padding:8px 18px; background:var(--accent); color:var(--bg-main); border:none; border-radius:8px; font-weight:bold;}
+    #product-filters button:hover {background:var(--brown);}
+    .product-list {display:flex;gap:28px;flex-wrap:wrap;margin-bottom:16px;justify-content:start;}
+    .product-item {background:var(--bg-main);border:1.5px solid #ffeac3;border-radius:var(--radius);box-shadow:0 2px 14px #ff98001a;padding:15px 10px 14px 10px;width:230px;margin-bottom:12px;transition:.17s;}
+    .product-item:hover {border-color:var(--accent);box-shadow:0 8px 28px #ff980038;}
+    .product-img { width: 100%; border-radius: 10px; margin-bottom: 9px;}
+    .product-item h3 {color:var(--brown); font-size:1.11em; margin:.3em 0 .7em;}
+    .product-item ul {font-size:.97em; color:#71615b;}
+    #calculator {background:var(--bg-block);border:1.5px solid #ffeac3;border-radius:var(--radius);padding:20px 19px;max-width:380px;margin:36px auto;box-shadow:0 2px 10px #ff980018;}
+    #calculator label {font-size:.99em;}
+    #calculator input, #calculator select {padding:7px 10px; border-radius:6px; border:1px solid #ffeac3; width:160px;}
+    #calculator button {margin-top:7px; padding:9px 22px; background:var(--accent); border:none; color:var(--bg-main); border-radius:7px; font-weight:bold;}
+    #calculator button:hover {background: var(--brown);}
+    #calcResult {margin-top:13px;}
+    .phone-float {position:fixed;bottom:32px;right:26px;width:58px;height:58px;background:var(--accent);border-radius:50%;box-shadow:0 4px 30px #ff980035;display:flex;align-items:center;justify-content:center;z-index:10999;border:none;cursor:pointer;transition:.19s;}
+    .phone-float:hover,.phone-float:active {background:#e28102;box-shadow:0 6px 42px #e28102a0;transform:scale(1.17) rotate(-4deg);}
+    .phone-float svg {width:2em;height:2em;fill:var(--bg-main);}
+    @media (max-width:840px) { .product-list {flex-direction:column;align-items:center;} .product-item {width:98%;}}
+    @media (max-width:650px) { .container {padding:0 2vw;}.phone-float {width:45px;height:45px;right:8px;bottom:10px;}.phone-float svg{width:1.3em;height:1.3em;}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>МАСТЕРСТРОЙ АА</h1>
+    <p>Производство тротуарной плитки и бордюров</p>
+  </header>
+  <nav>
+    <a href="about.html">О компании</a>
+    <a href="products.html" class="active">Продукция</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  <div class="container">
+    <h2 id="products">Каталог продукции</h2>
+    <div id="product-filters">
+      <form id="filters">
+        <label>Категория<br>
+          <select name="category">
+            <option value="">Все</option>
+            <option value="бордюр">Бордюры</option>
+            <option value="брусчатка">Брусчатка</option>
+          </select>
+        </label>
+        <label>Цвет<br>
+          <select name="color">
+            <option value="">Любой</option>
+            <option value="серый">Серый</option>
+          </select>
+        </label>
+        <label>Цена<br>
+          <select name="price">
+            <option value="">Любая</option>
+            <option value="low">до 400 руб</option>
+            <option value="high">от 400 руб</option>
+          </select>
+        </label>
+        <button type="reset">Сбросить фильтр</button>
+      </form>
+    </div>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/06/09/21/54/curb-1449154_1280.jpg" alt="Бордюр дорожный серый" class="product-img" loading="lazy">
+        <h3>Бордюр дорожный</h3>
+        <ul>
+          <li>Размер: 1000×300×150 мм</li>
+          <li>Кол-во в паллете: 18 шт</li>
+          <li>Вес: 95 кг/шт</li>
+          <li>Цена: 420 руб/шт</li>
+          <li><b>Вибропресс</b></li>
+        </ul>
+      </div>
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/06/09/21/54/curb-1449154_1280.jpg" alt="Бордюр магистральный серый" class="product-img" loading="lazy">
+        <h3>Бордюр магистральный</h3>
+        <ul>
+          <li>Размер: 1000×300×180 мм</li>
+          <li>Кол-во в паллете: 16 шт</li>
+          <li>Цена: 490 руб/шт</li>
+          <li><b>Вибропресс</b></li>
+        </ul>
+      </div>
+      <div class="product-item">
+        <img src="https://skladstroi.ru/upload/iblock/411/j7e72pht0a0gm4g4kfp5smg3hc4wv8c1.jpg" alt="Бордюр садовый серый" class="product-img" loading="lazy">
+        <h3>Бордюр садовый</h3>
+        <ul>
+          <li>Размер: 1000×200×80 мм</li>
+          <li>Кол-во в паллете: 48 шт</li>
+          <li>Вес: 35 кг/шт</li>
+          <li>Цена: 220 руб/шт</li>
+          <li><b>Вибропресс</b></li>
+        </ul>
+      </div>
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2018/04/16/00/18/pavement-3327631_1280.jpg" alt="Брусчатка серого цвета" class="product-img" loading="lazy">
+        <h3>Брусчатка</h3>
+        <ul>
+          <li>Длина: 200 мм</li>
+          <li>Ширина: 100 мм</li>
+          <li>Толщина: 50 мм</li>
+          <li>Цена: 700 руб/м²</li>
+          <li><b>Вибропресс</b></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      // Фильтрация каталога
+      document.getElementById('filters').addEventListener('change', function() {
+        const cat = this.category.value.toLowerCase();
+        const color = this.color.value.toLowerCase();
+        const price = this.price.value;
+        document.querySelectorAll('.product-item').forEach(card => {
+          let ok = true;
+          const text = card.innerText.toLowerCase();
+          if (cat && !text.includes(cat)) ok = false;
+          if (color && !text.includes(color)) ok = false;
+          let priceVal = 0;
+          const match = text.match(/([0-9]+)\s*руб/);
+          if(match) priceVal = Number(match[1]);
+          if(price === "low" && priceVal > 400) ok = false;
+          if(price === "high" && priceVal <= 400) ok = false;
+          card.style.display = ok ? '' : 'none';
+        });
+      });
+    </script>
+    <section id="calculator">
+      <h3 style="margin-top:0;color:var(--brown);font-size:1.13em;">Калькулятор заказа</h3>
+      <form id="orderCalc">
+        <label>Выберите товар:
+          <select id="calcType" required>
+            <option value="">-</option>
+            <option value="bordur" data-price="420">Бордюр дорожный (420р/шт)</option>
+            <option value="bruschatka" data-price="700">Брусчатка (700р/м²)</option>
+            <option value="bordur2" data-price="490">Бордюр магистральный (490р/шт)</option>
+            <option value="bordur3" data-price="220">Бордюр садовый (220р/шт)</option>
+          </select>
+        </label><br>
+        <label>Укажите объём (м, м² или шт):
+          <input type="number" min="1" id="calcAmount" required>
+        </label><br>
+        <button type="submit">Рассчитать</button>
+      </form>
+      <div id="calcResult"></div>
+    </section>
+    <script>
+      document.getElementById('orderCalc').onsubmit = function(e){
+        e.preventDefault();
+        const sel = document.getElementById('calcType').selectedOptions[0];
+        let price = +sel.dataset.price || 0;
+        let qty = +document.getElementById('calcAmount').value || 1;
+        if(!price) return;
+        let sum = price * qty;
+        document.getElementById('calcResult').innerHTML = `<b>Итого: ${sum} руб.</b><br>Для заказа позвоните: <a href="tel:+79260480808" style="color:var(--accent);font-weight:bold;">+7 (926) 048-08-08</a>`;
+      };
+    </script>
+  </div>
+  <a href="tel:+79260480808" class="phone-float" aria-label="+7 (926) 048-08-08">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11" fill="#ff9800"/>
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.69.59A1 1 0 0121 17v3a1 1 0 01-1 1C11.16 21 3 12.84 3 3a1 1 0 011-1h3a1 1 0 011 0.27 11.72 11.72 0 00.59 3.69 1 1 0 01-.24 1.01l-2.2 2.21z"/>
+    </svg>
+  </a>
+</body>
+</html>

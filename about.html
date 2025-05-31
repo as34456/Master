@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О компании — Мастерстрой АА</title>
+  <meta name="description" content="О компании Мастерстрой АА — тротуарная плитка и бордюры в Московской области, доверие, качество и опыт.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ff9800;
+      --brown: #88471a;
+      --bg-main: #fff;
+      --bg-block: #fff8f1;
+      --shadow: 0 8px 32px #88471a11;
+      --radius: 16px;
+    }
+    html, body { background:var(--bg-main); box-sizing:border-box; margin:0;padding:0; }
+    body { font-family:'Inter', Arial, sans-serif; color:var(--brown);}
+    header {
+      background: var(--bg-block); border-bottom: 1.5px solid var(--accent); padding: 26px 0 20px; text-align: center; box-shadow: var(--shadow);}
+    header h1 {color: var(--brown); font-weight:900; font-size:2.2em; margin:0 0 5px 0;}
+    header p {color: var(--accent); font-weight:600; font-size:1.11em; margin:0;}
+    nav {display: flex; justify-content:center; gap:26px; margin:30px 0 18px 0; font-size:1.07em;}
+    nav a {color: var(--brown); font-weight:bold; text-decoration:none; padding:7px 0; border-bottom:2.5px solid transparent; transition:.16s;}
+    nav a.active, nav a:hover {color: var(--accent);border-bottom:2.5px solid var(--accent);}
+    .container { max-width: 860px; margin: 0 auto; padding: 0 13px; }
+    .hero {
+      background: linear-gradient(90deg, #fffbe6 60%, #fff);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 36px 0 26px 0; margin: 0 0 25px 0; text-align: center;
+    }
+    .hero h2 {font-size:1.8em; margin-bottom:15px; color:var(--accent); font-weight:900;}
+    .hero p {font-size:1.16em; color:#71615b; font-weight:500; margin:0 auto; max-width:560px;}
+    .about-main {background:var(--bg-block);padding:24px 20px 20px 20px; border-radius:var(--radius);box-shadow:0 2px 10px #ff98000d;}
+    .about-main h3 {margin-top:0;}
+    .icon-list {margin:18px 0 0 0; padding:0; list-style:none; display:grid; gap:14px;}
+    .icon-list li:before {content:"✓";margin-right:10px;color:var(--accent);font-weight:bold;}
+    .reviews-block {margin:30px auto 32px auto;max-width:600px;}
+    .reviews-block blockquote {background: #fff6e0; border-left: 5.5px solid var(--accent); margin:0 0 18px 0; padding:14px 16px 10px 18px; border-radius:7px; color:var(--brown);}
+    @media (max-width:800px) {
+      .container {max-width:97%;}
+    }
+    .phone-float {position:fixed;bottom:32px;right:26px;width:58px;height:58px;background:var(--accent);border-radius:50%;box-shadow:0 4px 30px #ff980035;display:flex;align-items:center;justify-content:center;z-index:10999;border:none;cursor:pointer;transition:.19s;}
+    .phone-float:hover,.phone-float:active {background:#e28102;box-shadow:0 6px 42px #e28102a0;transform:scale(1.17) rotate(-4deg);}
+    .phone-float svg {width:2em;height:2em;fill:var(--bg-main);}
+    @media (max-width:650px) { .phone-float {width:45px;height:45px;right:8px;bottom:10px;} .phone-float svg{width:1.3em;height:1.3em;} }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>МАСТЕРСТРОЙ АА</h1>
+    <p>Производство тротуарной плитки и бордюров</p>
+  </header>
+  <nav>
+    <a href="about.html" class="active">О компании</a>
+    <a href="products.html">Продукция</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  <div class="container">
+    <section class="hero" id="about">
+      <h2>О компании</h2>
+      <p>
+        ООО «Мастерстрой АА» — опытный производитель тротуарной плитки и бордюров.<br>С 2008 года мы создаём долговечные покрытия для коттеджей, городских улиц и&nbsp;предприятий Московской области.
+      </p>
+    </section>
+    <div class="about-main">
+      <h3>Почему нам доверяют:</h3>
+      <ul class="icon-list">
+        <li>Собственное современное производство — <b>без посредников</b></li>
+        <li>Контроль качества и все обязательные сертификаты</li>
+        <li>Ассортимент плиткок и бордюров на складе</li>
+        <li>Отгрузка со склада в Одинцовском районе — самовывоз и быстрая доставка</li>
+        <li>Профессиональные консультации и помощь в подборе</li>
+      </ul>
+    </div>
+    <div class="reviews-block">
+      <h2 style="color:var(--accent);margin-top:30px;">Отзывы клиентов</h2>
+      <blockquote>
+        «Спасибо за быструю поставку плитки! Всё уложили за два дня. — Анна, Одинцово»
+      </blockquote>
+      <blockquote>
+        «Качество отличное, купили бордюр для дорожек, забрали самовывозом. — Михаил, Лесной городок»
+      </blockquote>
+    </div>
+  </div>
+  <a href="tel:+79260480808" class="phone-float" aria-label="+7 (926) 048-08-08">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11" fill="#ff9800"/>
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.69.59A1 1 0 0121 17v3a1 1 0 01-1 1C11.16 21 3 12.84 3 3a1 1 0 011-1h3a1 1 0 011 0.27 11.72 11.72 0 00.59 3.69 1 1 0 01-.24 1.01l-2.2 2.21z"/>
+    </svg>
+  </a>
+</body>
+</html>
